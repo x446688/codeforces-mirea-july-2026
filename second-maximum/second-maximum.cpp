@@ -1,24 +1,25 @@
 #include <algorithm>
+#include <cstdint>
 #include <vector>
 #include <iostream>
 
 int main(){
-  int t;
-  int n;
-  std::vector<int> v;
-  std::vector<int> answ;
+  int32_t t;
+  int32_t n;
+  std::vector<int32_t> v;
+  std::vector<int32_t> answ;
   std::cin >> t;
-  for (int i = 0; i < t; ++i) {
+  for (int32_t i = 0; i < t; ++i) {
     std::cin >> n;
-    for (int j = 0; j < n; ++j) {
-      int tmp;
+    for (int32_t j = 0; j < n; ++j) {
+      int32_t tmp;
       std::cin >> tmp;
       v.push_back(tmp);
     }
     std::sort(v.begin(),v.end());
     auto mx_it = max_element(v.begin(),v.end());
-    int mx = *mx_it;
-    int first = mx_it - v.begin();
+    int32_t mx = *mx_it;
+    int32_t first = mx_it - v.begin();
     answ.push_back(v[first - 1]);
     v.clear();
   }
